@@ -10,9 +10,9 @@ interface ButtonProps {
 }
 
 const variants = {
-  primary: 'bg-accent text-white hover:bg-accent/90 shadow-lg shadow-accent/25',
-  secondary: 'bg-secondary text-primary hover:bg-secondary/80',
-  outline: 'border-2 border-white text-white hover:bg-white/10',
+  primary: 'border-2 border-accent text-white bg-accent/10 hover:bg-accent/20 backdrop-blur-sm',
+  secondary: 'border-2 border-secondary text-white bg-secondary/10 hover:bg-secondary/20 backdrop-blur-sm',
+  outline: 'border-2 border-white text-white bg-transparent hover:bg-white/10 backdrop-blur-sm',
 };
 
 const sizes = {
@@ -22,7 +22,7 @@ const sizes = {
 };
 
 export default function Button({
-  variant = 'primary',
+  variant = 'outline',
   size = 'md',
   href,
   onClick,

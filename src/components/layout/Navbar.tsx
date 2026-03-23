@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu } from 'lucide-react';
-import LogoFull from '../../assets/logos/Logo-SM.svg';
-import LogoIcon from '../../assets/logos/Logo-SM-ONLY.svg';
+import LogoHorizontal from '../../assets/logos/Logo-horizontal.png';
 import { company } from '../../data/company';
 import { scrollToElement } from '../../utils/scrollToElement';
 import MobileMenu from './MobileMenu';
@@ -47,17 +46,12 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between h-20 lg:h-24">
             <Link to="/" className="flex-shrink-0">
               <img
-                src={LogoFull}
+                src={LogoHorizontal}
                 alt={company.name}
-                className="h-10 lg:h-12 hidden sm:block"
-              />
-              <img
-                src={LogoIcon}
-                alt={company.name}
-                className="h-10 sm:hidden"
+                className="h-14 lg:h-16 w-auto"
               />
             </Link>
 
@@ -77,7 +71,7 @@ export default function Navbar() {
             <div className="hidden lg:block">
               <a
                 href={company.emailHref}
-                className="bg-accent text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors"
+                className="border-2 border-accent text-white bg-accent/10 hover:bg-accent/20 backdrop-blur-sm px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300"
               >
                 Zatražite ponudu
               </a>
