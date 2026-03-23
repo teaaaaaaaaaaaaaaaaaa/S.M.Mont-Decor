@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Phone, Mail, Camera } from 'lucide-react';
 import LogoHorizontal from '../../assets/logos/Logo-horizontal.png';
 import StatCard from '../ui/StatCard';
@@ -29,7 +30,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
             {/* Logo & Description */}
             <div>
-              <img src={LogoHorizontal} alt={company.name} className="h-14 mb-4" />
+              <img src={LogoHorizontal} alt={company.name} className="h-42 mb-4" />
               <p className="text-white/60 text-sm leading-relaxed">
                 Profesionalne adaptacije stanova i poslovnih prostora u Beogradu.
                 Suva gradnja, gipsarski radovi, elektroinstalacije i kompletne adaptacije ključ u ruke.
@@ -105,9 +106,33 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/40 text-xs">
-            <p>&copy; {new Date().getFullYear()} {company.name}. Sva prava zadržana.</p>
-            <p>PIB: {company.pib} | MB: {company.mb}</p>
+          <div className="border-t border-white/10 mt-10 pt-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center text-xs">
+              <p className="text-white/40 text-center md:text-left">
+                &copy; {new Date().getFullYear()} {company.name}. Sva prava zadržana.
+              </p>
+              <div className="text-center">
+                <motion.a
+                  href="https://ajsasoft.rs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-sm font-semibold bg-gradient-to-r from-white via-secondary to-accent bg-clip-text text-transparent hover:scale-105 transition-transform"
+                  animate={{
+                    opacity: [0.8, 1, 0.8],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  Dizajn i izrada AjsaSoft
+                </motion.a>
+              </div>
+              <p className="text-white/40 text-center md:text-right">
+                PIB: {company.pib} | MB: {company.mb}
+              </p>
+            </div>
           </div>
         </div>
       </footer>

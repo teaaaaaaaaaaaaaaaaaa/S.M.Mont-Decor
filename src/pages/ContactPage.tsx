@@ -95,7 +95,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <Button variant="primary" size="lg" href={company.emailHref}>
+              <Button variant="primary" size="lg" href={company.emailHref} className="!text-primary">
                 Pošaljite nam poruku
               </Button>
             </AnimatedSection>

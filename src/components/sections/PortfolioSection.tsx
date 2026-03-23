@@ -73,16 +73,16 @@ export default function PortfolioSection() {
                 className={`group cursor-pointer ${
                   index === 0 ? 'md:col-span-2 md:row-span-2' : ''
                 }`}
+                onClick={() => setLightboxIndex(index)}
               >
                 <div className="relative overflow-hidden rounded-xl aspect-[4/3]">
                   <LazyImage
                     src={item.src}
                     alt={item.alt}
                     className="w-full h-full"
-                    onClick={() => setLightboxIndex(index)}
                   />
-                  <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/20 transition-colors duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/20 transition-colors duration-300 pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                     <p className="text-white text-xs">
                       {categoryLabels[item.category]}
                     </p>

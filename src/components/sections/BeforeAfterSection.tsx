@@ -72,7 +72,7 @@ export default function BeforeAfterSection() {
             {/* Left Arrow */}
             <button
               onClick={goToPrevious}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -translate-x-4 lg:-translate-x-12 w-12 h-12 rounded-full bg-accent/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center text-white hover:bg-accent/40 transition-all duration-300 hover:scale-110"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -translate-x-8 lg:-translate-x-20 w-12 h-12 rounded-full bg-accent/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center text-white hover:bg-accent/40 transition-all duration-300 hover:scale-110"
               aria-label="Prethodni par"
             >
               <ChevronLeft size={24} />
@@ -81,7 +81,7 @@ export default function BeforeAfterSection() {
             {/* Right Arrow */}
             <button
               onClick={goToNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 translate-x-4 lg:translate-x-12 w-12 h-12 rounded-full bg-accent/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center text-white hover:bg-accent/40 transition-all duration-300 hover:scale-110"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 translate-x-8 lg:translate-x-20 w-12 h-12 rounded-full bg-accent/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center text-white hover:bg-accent/40 transition-all duration-300 hover:scale-110"
               aria-label="Sledeći par"
             >
               <ChevronRight size={24} />

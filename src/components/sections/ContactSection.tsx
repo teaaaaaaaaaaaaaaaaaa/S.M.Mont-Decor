@@ -1,4 +1,4 @@
-import { Phone, Mail, Camera, MapPin } from 'lucide-react';
+import { Phone, Mail, Camera, MapPin, Clock } from 'lucide-react';
 import AnimatedSection from '../ui/AnimatedSection';
 import Button from '../ui/Button';
 import { company } from '../../data/company';
@@ -19,44 +19,66 @@ export default function ContactSection() {
               garantujemo kvalitet i profesionalnost u svakom projektu.
             </p>
 
-            <div className="space-y-4 mb-8">
+            <div className="space-y-5 mb-8">
               <a
                 href={company.phoneHref}
-                className="flex items-center gap-3 text-white hover:text-secondary transition-colors group"
+                className="flex items-center gap-4 text-white hover:text-secondary transition-colors group"
               >
-                <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
-                  <Phone size={18} className="text-accent" />
+                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
+                  <Phone size={20} className="text-accent" />
                 </div>
-                <span className="text-lg font-medium">{company.phoneFormatted}</span>
+                <div>
+                  <p className="text-sm text-white/50">Telefon</p>
+                  <p className="text-lg font-semibold">{company.phoneFormatted}</p>
+                </div>
               </a>
 
               <a
                 href={company.emailHref}
-                className="flex items-center gap-3 text-white hover:text-secondary transition-colors group"
+                className="flex items-center gap-4 text-white hover:text-secondary transition-colors group"
               >
-                <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
-                  <Mail size={18} className="text-accent" />
+                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
+                  <Mail size={20} className="text-accent" />
                 </div>
-                <span className="text-lg font-medium">{company.email}</span>
+                <div>
+                  <p className="text-sm text-white/50">Email</p>
+                  <p className="text-lg font-semibold">{company.email}</p>
+                </div>
               </a>
 
               <a
                 href={company.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-white hover:text-secondary transition-colors group"
+                className="flex items-center gap-4 text-white hover:text-secondary transition-colors group"
               >
-                <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
-                  <Camera size={18} className="text-accent" />
+                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
+                  <Camera size={20} className="text-accent" />
                 </div>
-                <span className="text-lg font-medium">Instagram</span>
+                <div>
+                  <p className="text-sm text-white/50">Instagram</p>
+                  <p className="text-lg font-semibold">@smmontdecor</p>
+                </div>
               </a>
 
-              <div className="flex items-center gap-3 text-white/60">
-                <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
-                  <MapPin size={18} className="text-accent" />
+              <div className="flex items-center gap-4 text-white">
+                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
+                  <MapPin size={20} className="text-accent" />
                 </div>
-                <span className="text-lg">{company.address}</span>
+                <div>
+                  <p className="text-sm text-white/50">Lokacija</p>
+                  <p className="text-lg font-semibold">{company.address}</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 text-white">
+                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
+                  <Clock size={20} className="text-accent" />
+                </div>
+                <div>
+                  <p className="text-sm text-white/50">Radno vreme</p>
+                  <p className="text-lg font-semibold">Pon - Sub: 08:00 - 18:00</p>
+                </div>
               </div>
             </div>
 

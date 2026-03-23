@@ -69,17 +69,6 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 backdrop-blur-md border border-accent/30 mb-6"
-        >
-          <Sparkles size={16} className="text-accent" />
-          <span className="text-white text-sm font-medium">15+ godina profesionalnog iskustva</span>
-        </motion.div>
-
         {/* Main Heading with Gradient */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
