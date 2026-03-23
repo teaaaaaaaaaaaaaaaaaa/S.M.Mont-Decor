@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(git -C \"c:\\\\Users\\\\INSOMNIA\\\\S.M.Mont-Decor\" log --oneline --all)",
+      "Bash(npm install)",
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx vite build)",
+      "Bash(npx vite:*)"
+    ]
+  }
+}
