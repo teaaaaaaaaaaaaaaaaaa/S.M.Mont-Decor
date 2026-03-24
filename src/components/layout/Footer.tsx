@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Phone, Mail, Camera } from 'lucide-react';
 import LogoHorizontal from '../../assets/logos/Logo-horizontal.png';
+import LogoSmall from '../../assets/logos/Logo-SM-ONLY.svg';
 import StatCard from '../ui/StatCard';
 import { company } from '../../data/company';
 
@@ -29,20 +30,31 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
             {/* Logo & Description */}
-            <div>
-              <img src={LogoHorizontal} alt={company.name} className="h-42 mb-4" />
-              <p className="text-white/60 text-sm leading-relaxed">
+            <div className="flex flex-col items-center md:items-start">
+              {/* Mobile logo - centered and smaller */}
+              <img
+                src={LogoSmall}
+                alt={company.name}
+                className="h-24 w-auto mb-6 md:hidden"
+              />
+              {/* Desktop logo */}
+              <img
+                src={LogoHorizontal}
+                alt={company.name}
+                className="hidden md:block h-42 mb-4"
+              />
+              <p className="text-white/60 text-sm leading-relaxed text-center md:text-left">
                 Profesionalne adaptacije stanova i poslovnih prostora u Beogradu.
                 Suva gradnja, gipsarski radovi, elektroinstalacije i kompletne adaptacije ključ u ruke.
               </p>
             </div>
 
             {/* Quick Links */}
-            <div>
+            <div className="text-center md:text-left">
               <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
                 Navigacija
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 flex flex-col items-center md:items-start">
                 <li>
                   <Link to="/#usluge" className="text-white/60 hover:text-white text-sm transition-colors">
                     Usluge
@@ -67,11 +79,11 @@ export default function Footer() {
             </div>
 
             {/* Contact Info */}
-            <div>
+            <div className="text-center md:text-left">
               <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
                 Kontakt
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 flex flex-col items-center md:items-start">
                 <li>
                   <a
                     href={company.phoneHref}

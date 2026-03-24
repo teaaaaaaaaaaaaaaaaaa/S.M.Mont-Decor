@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import LogoHorizontal from '../../assets/logos/Logo-horizontal.png';
+import LogoSmall from '../../assets/logos/Logo-SM-ONLY.svg';
 import { company } from '../../data/company';
 import { scrollToElement } from '../../utils/scrollToElement';
 import MobileMenu from './MobileMenu';
@@ -39,19 +40,28 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 will-change-[background-color,box-shadow] transition-[background-color,box-shadow,backdrop-filter] duration-300 ${
+          isMobileMenuOpen ? 'z-[110]' : 'z-50'
+        } ${
           isScrolled
             ? 'bg-primary/95 backdrop-blur-md shadow-lg'
-            : 'bg-transparent'
+            : 'bg-primary/70 backdrop-blur-sm'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20 lg:h-24">
-            <Link to="/" className="flex-shrink-0">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+          <div className="flex items-center justify-between h-20 lg:h-24 relative">
+            <Link to="/" className={`flex-shrink-0 transition-opacity duration-200 ${isMobileMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+              {/* Mobile logo */}
+              <img
+                src={LogoSmall}
+                alt={company.name}
+                className="h-12 w-auto lg:hidden"
+              />
+              {/* Desktop logo */}
               <img
                 src={LogoHorizontal}
                 alt={company.name}
-                className="h-14 lg:h-16 w-auto"
+                className="hidden lg:block h-16 w-auto"
               />
             </Link>
 
@@ -78,11 +88,15 @@ export default function Navbar() {
             </div>
 
             <button
-              onClick={() => setIsMobileMenuOpen(true)}
-              className="lg:hidden text-white p-2"
-              aria-label="Otvori meni"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden absolute right-4 top-1/2 -translate-y-1/2 text-white p-2 w-10 h-10 flex items-center justify-center hover:bg-white/10 rounded-lg transition-colors"
+              aria-label={isMobileMenuOpen ? 'Zatvori meni' : 'Otvori meni'}
             >
-              <Menu size={24} />
+              {isMobileMenuOpen ? (
+                <X size={24} strokeWidth={2.5} />
+              ) : (
+                <Menu size={24} strokeWidth={2.5} />
+              )}
             </button>
           </div>
         </div>
