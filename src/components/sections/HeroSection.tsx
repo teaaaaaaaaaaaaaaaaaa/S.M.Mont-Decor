@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronDown, Sparkles } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Button from '../ui/Button';
 import heroImage from '../../assets/images/photo-01.jpg';
 import { company } from '../../data/company';
