@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Phone, Mail, Camera } from 'lucide-react';
-import LogoHorizontal from '../../assets/logos/Logo-horizontal.png';
-import LogoSmall from '../../assets/logos/Logo-SM-ONLY.svg';
+import { Phone, Mail } from 'lucide-react';
+import LogoSmall from '../../assets/logos/Logo-SM-small.png';
 import StatCard from '../ui/StatCard';
 import { company } from '../../data/company';
 
@@ -39,7 +38,7 @@ export default function Footer() {
               />
               {/* Desktop logo */}
               <img
-                src={LogoHorizontal}
+                src={LogoSmall}
                 alt={company.name}
                 className="hidden md:block h-42 mb-4"
               />
@@ -102,7 +101,7 @@ export default function Footer() {
                     {company.email}
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href={company.instagram}
                     target="_blank"
@@ -112,7 +111,7 @@ export default function Footer() {
                     <Camera size={16} />
                     Instagram
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

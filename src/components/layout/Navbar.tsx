@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import LogoHorizontal from '../../assets/logos/Logo-horizontal.png';
-import LogoSmall from '../../assets/logos/Logo-SM-ONLY.svg';
+import LogoHorizontal from '../../assets/logos/Logo-SM-full.svg';
+import LogoSmall from '../../assets/logos/Logo-SM-full.svg';
 import { company } from '../../data/company';
 import { scrollToElement } from '../../utils/scrollToElement';
 import MobileMenu from './MobileMenu';
@@ -55,13 +55,13 @@ export default function Navbar() {
               <img
                 src={LogoSmall}
                 alt={company.name}
-                className="h-12 w-auto lg:hidden"
+                className="h-12 w-auto lg:hidden pt-2 pb-2"
               />
               {/* Desktop logo */}
               <img
                 src={LogoHorizontal}
                 alt={company.name}
-                className="hidden lg:block h-16 w-auto"
+                className="hidden lg:block h-16 w-auto pt-1 pb-1"
               />
             </Link>
 

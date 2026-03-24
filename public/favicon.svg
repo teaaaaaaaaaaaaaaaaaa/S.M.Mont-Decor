@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Creator: CorelDRAW X7 -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="124px" height="129px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 61 64"
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="131px" height="135px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 66 68"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
   <style type="text/css">
    <![CDATA[
-    .str0 {stroke:#2F70C1;stroke-width:1.45128}
-    .str1 {stroke:#2F70C1;stroke-width:0.580513}
-    .str2 {stroke:#2F70C1;stroke-width:0.290257}
-    .str3 {stroke:#2F70C1;stroke-width:0.221176}
-    .fil0 {fill:none}
-    .fil2 {fill:#224582}
-    .fil3 {fill:#2F70C1}
-    .fil1 {fill:white}
+    .str0 {stroke:#2F70C1;stroke-width:5.92527}
+    .str1 {stroke:#2F70C1;stroke-width:1.48132}
+    .fil1 {fill:#2F70C1}
+    .fil0 {fill:#8FD4FF}
    ]]>
   </style>
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <rect class="fil0 str0" x="13" y="29" width="32.1755" height="25.2024"/>
-  <polygon class="fil0 str0" points="6,29 29,6 53,29 "/>
-  <path class="fil0 str1" d="M59 54l0 3c0,1 -1,2 -2,2l-55 0c-1,0 -2,-1 -2,-2l0 -55c0,-1 1,-2 2,-2l55 0c1,0 2,1 2,2l0 4"/>
-  <rect class="fil0 str0" x="22" y="33" width="14.516" height="21.1364"/>
-  <path class="fil1 str0" d="M49 54c2,0 4,2 4,5 0,2 -2,4 -4,4l-38 0c-3,0 -5,-2 -5,-4 0,-3 2,-5 5,-5l38 0z"/>
-  <rect class="fil2 str2" x="17" y="54" width="1.94153" height="1.94153"/>
-  <rect class="fil2 str2" x="28" y="54" width="1.94153" height="1.94153"/>
-  <rect class="fil2 str2" x="40" y="54" width="1.94153" height="1.94153"/>
-  <polygon class="fil3 str3" points="59,52 61,48 61,48 61,8 57,8 57,48 57,48 "/>
+  <rect class="fil0 str0" x="3" y="3" width="59.7602" height="59.7374" rx="5" ry="5"/>
+  <rect class="fil1 str1" x="9" y="58" width="47.4297" height="8.8008" rx="4" ry="4"/>
+  <rect class="fil1 str1" x="16" y="32" width="32.8414" height="25.724"/>
+  <polygon class="fil1 str1" points="9,32 33,9 57,32 "/>
+  <rect class="fil1 str1" x="25" y="37" width="14.8164" height="21.5738"/>
  </g>
 </svg>
