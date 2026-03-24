@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Phone, Mail } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Phone, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { company } from '../../data/company';
-import { scrollToElement } from '../../utils/scrollToElement';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -10,61 +10,71 @@ interface MobileMenuProps {
 }
 
 const navLinks = [
-  { label: 'Usluge', href: '/#usluge', sectionId: 'usluge' },
-  { label: 'Galerija', href: '/galerija', sectionId: '' },
-  { label: 'O nama', href: '/#o-nama', sectionId: 'o-nama' },
-  { label: 'Kontakt', href: '/kontakt', sectionId: '' },
+  { label: 'Usluge', href: '/usluge' },
+  { label: 'Galerija', href: '/galerija' },
+  { label: 'O nama', href: '/o-nama' },
+  { label: 'Kontakt', href: '/kontakt' },
 ];
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
-  const location = useLocation();
-  const isHome = location.pathname === '/';
+  // Block scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      // Force reflow to sync layout before applying overflow
+      document.body.getBoundingClientRect();
 
-  const handleNavClick = (link: typeof navLinks[0]) => {
-    onClose();
-    if (isHome && link.sectionId) {
-      setTimeout(() => scrollToElement(link.sectionId), 100);
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
     }
+
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    };
+  }, [isOpen]);
+
+  const handleNavClick = () => {
+    onClose();
   };
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 bg-primary/95 backdrop-blur-lg"
-        >
-          <div className="flex flex-col h-full px-6 py-6">
-            <div className="flex justify-end">
-              <button onClick={onClose} className="text-white p-2">
-                <X size={28} />
-              </button>
-            </div>
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm"
+            onClick={onClose}
+          />
 
-            <nav className="flex flex-col items-center justify-center flex-1 gap-8">
-              {navLinks.map((link) =>
-                link.sectionId && isHome ? (
-                  <button
-                    key={link.label}
-                    onClick={() => handleNavClick(link)}
-                    className="text-white text-2xl font-medium hover:text-secondary transition-colors"
-                  >
-                    {link.label}
-                  </button>
-                ) : (
-                  <Link
-                    key={link.label}
-                    to={link.sectionId ? link.href : link.href}
-                    onClick={() => handleNavClick(link)}
-                    className="text-white text-2xl font-medium hover:text-secondary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                )
-              )}
+          {/* Menu Panel */}
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-y-0 right-0 z-[100] w-full bg-primary shadow-2xl"
+          >
+          <div className="flex flex-col h-full px-6 py-6">
+            <nav className="flex flex-col items-center justify-center flex-1 gap-8 mt-20">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  onClick={handleNavClick}
+                  className="text-white text-2xl font-medium hover:text-secondary transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
 
               <a
                 href={company.emailHref}
@@ -86,7 +96,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               </a>
             </div>
           </div>
-        </motion.div>
+          </motion.div>
+        </>
       )}
     </AnimatePresence>
   );
