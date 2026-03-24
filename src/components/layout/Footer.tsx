@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, MapIcon } from 'lucide-react';
 import LogoSmall from '../../assets/logos/Logo-SM-small.png';
 import StatCard from '../ui/StatCard';
 import { company } from '../../data/company';
@@ -50,7 +48,7 @@ export default function Footer() {
 
             {/* Quick Links */}
             <div className="text-center md:text-left">
-              <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+              {/* <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
                 Navigacija
               </h3>
               <ul className="space-y-3 flex flex-col items-center md:items-start">
@@ -74,19 +72,30 @@ export default function Footer() {
                     Kontakt
                   </Link>
                 </li>
-              </ul>
+              </ul> */}
             </div>
 
             {/* Contact Info */}
             <div className="text-center md:text-left">
-              <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
-                Kontakt
+              <h3 className="text-white font-semibold text-2xl uppercase tracking-wider mb-4">
+                {company.name}
               </h3>
               <ul className="space-y-3 flex flex-col items-center md:items-start">
                 <li>
+                  <p className="text-white/40 text-center md:text-right">
+                    PIB: {company.pib} | MB: {company.mb}
+                  </p>
+                </li>
+                <li>
+                  <p className="flex items-center gap-2 text-white/40 text-sm">
+                    <MapIcon size={16} />
+                    {company.address}
+                  </p>
+                </li>
+                <li>
                   <a
                     href={company.phoneHref}
-                    className="flex items-center gap-2 text-white/60 hover:text-white text-sm transition-colors"
+                    className="flex items-center gap-2 text-white/60 hover:text-white text-xl transition-colors"
                   >
                     <Phone size={16} />
                     {company.phoneFormatted}
@@ -118,31 +127,27 @@ export default function Footer() {
 
           {/* Bottom Bar */}
           <div className="border-t border-white/10 mt-10 pt-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center text-xs">
-              <p className="text-white/40 text-center md:text-left">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-center text-xs">
+              <p className="text-white/50 text-center md:text-left">
                 &copy; {new Date().getFullYear()} {company.name}. Sva prava zadržana.
               </p>
-              <div className="text-center">
-                <motion.a
+              <div className="text-right">
+                <p className='text-white/40'>Created by <span>
+                <a 
                   href="https://ajsasoft.rs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-sm font-semibold bg-gradient-to-r from-white via-secondary to-accent bg-clip-text text-transparent hover:scale-105 transition-transform"
-                  animate={{
-                    opacity: [0.8, 1, 0.8],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
+                  className="inline-block rounded-sm bg-amber-50/20 p-1.5 text-white/40 hover:text-orange-400/80 hover:bg-amber-50/0 transition-colors duration-1000 ease-in-out"
+                  
                 >
-                  Dizajn i izrada AjsaSoft
-                </motion.a>
+                  AjsaSoft
+                </a>
+                </span>
+                </p>
               </div>
-              <p className="text-white/40 text-center md:text-right">
+              {/* <p className="text-white/40 text-center md:text-right">
                 PIB: {company.pib} | MB: {company.mb}
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
