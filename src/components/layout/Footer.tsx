@@ -137,7 +137,7 @@ export default function Footer() {
                   href="https://ajsasoft.rs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block rounded-sm bg-amber-50/20 p-1.5 text-white/40 hover:text-orange-400/80 hover:bg-amber-50/0 transition-colors duration-1000 ease-in-out"
+                  className="inline-block rounded-sm bg-white/10 p-1.5 text-white/40 hover:text-orange-400/80 hover:bg-amber-50/0 transition-colors duration-1000 ease-in-out"
                   
                 >
                   AjsaSoft
