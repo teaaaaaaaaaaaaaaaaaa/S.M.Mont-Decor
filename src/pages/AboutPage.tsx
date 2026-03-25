@@ -70,7 +70,7 @@ export default function AboutPage() {
                   </div>
                 </a>
 
-                <a
+                {/* <a
                   href={company.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -83,7 +83,7 @@ export default function AboutPage() {
                     <p className="text-sm text-white/50">Instagram</p>
                     <p className="text-lg font-semibold">@smmontdecor</p>
                   </div>
-                </a>
+                </a> */}
 
                 <div className="flex items-center gap-4 text-white">
                   <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
