@@ -1,4 +1,4 @@
-import { Phone, Mail, Camera, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail,  MapPin, Clock } from 'lucide-react';
 import AnimatedSection from '../components/ui/AnimatedSection';
 import Button from '../components/ui/Button';
 import { company } from '../data/company';
