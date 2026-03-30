@@ -69,19 +69,19 @@ export default function BeforeAfterSection() {
 
           {/* Slider with Arrow Navigation */}
           <div className="relative">
-            {/* Left Arrow */}
+            {/* Left Arrow - Desktop only */}
             <button
               onClick={goToPrevious}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -translate-x-8 lg:-translate-x-20 w-12 h-12 rounded-full bg-accent/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center text-white hover:bg-accent/40 transition-all duration-300 hover:scale-110"
+              className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 -translate-x-20 w-12 h-12 rounded-full bg-accent/20 backdrop-blur-sm border-2 border-white/30 items-center justify-center text-white hover:bg-accent/40 transition-all duration-300 hover:scale-110"
               aria-label="Prethodni par"
             >
               <ChevronLeft size={24} />
             </button>
 
-            {/* Right Arrow */}
+            {/* Right Arrow - Desktop only */}
             <button
               onClick={goToNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 translate-x-8 lg:translate-x-20 w-12 h-12 rounded-full bg-accent/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center text-white hover:bg-accent/40 transition-all duration-300 hover:scale-110"
+              className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 translate-x-20 w-12 h-12 rounded-full bg-accent/20 backdrop-blur-sm border-2 border-white/30 items-center justify-center text-white hover:bg-accent/40 transition-all duration-300 hover:scale-110"
               aria-label="Sledeći par"
             >
               <ChevronRight size={24} />
@@ -127,8 +127,45 @@ export default function BeforeAfterSection() {
             </div>
           </div>
 
-          {/* Dot Navigation */}
-          <div className="flex justify-center gap-3 mt-6">
+          {/* Mobile Navigation - Arrows + Dots */}
+          <div className="flex lg:hidden items-center justify-center gap-4 mt-6">
+            {/* Left Arrow - Mobile */}
+            <button
+              onClick={goToPrevious}
+              className="w-10 h-10 rounded-full bg-accent/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center text-white hover:bg-accent/40 transition-all duration-300"
+              aria-label="Prethodni par"
+            >
+              <ChevronLeft size={20} />
+            </button>
+
+            {/* Dot Navigation */}
+            <div className="flex justify-center gap-3">
+              {beforeAfterPairs.map((pair, index) => (
+                <button
+                  key={pair.id}
+                  onClick={() => setActiveIndex(index)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    index === activeIndex
+                      ? 'bg-accent w-6'
+                      : 'bg-white/30 hover:bg-white/50'
+                  }`}
+                  aria-label={`Prikaži par ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Right Arrow - Mobile */}
+            <button
+              onClick={goToNext}
+              className="w-10 h-10 rounded-full bg-accent/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center text-white hover:bg-accent/40 transition-all duration-300"
+              aria-label="Sledeći par"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+
+          {/* Desktop Dot Navigation */}
+          <div className="hidden lg:flex justify-center gap-3 mt-6">
             {beforeAfterPairs.map((pair, index) => (
               <button
                 key={pair.id}

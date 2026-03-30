@@ -1,7 +1,5 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Phone, Mail, Camera } from 'lucide-react';
-import LogoHorizontal from '../../assets/logos/Logo-horizontal.png';
+import { Phone, Mail, MapIcon } from 'lucide-react';
+import LogoSmall from '../../assets/logos/Logo-SM-small.png';
 import StatCard from '../ui/StatCard';
 import { company } from '../../data/company';
 
@@ -29,20 +27,31 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
             {/* Logo & Description */}
-            <div>
-              <img src={LogoHorizontal} alt={company.name} className="h-42 mb-4" />
-              <p className="text-white/60 text-sm leading-relaxed">
+            <div className="flex flex-col items-center md:items-start">
+              {/* Mobile logo - centered and smaller */}
+              <img
+                src={LogoSmall}
+                alt={company.name}
+                className="h-24 w-auto mb-6 md:hidden"
+              />
+              {/* Desktop logo */}
+              <img
+                src={LogoSmall}
+                alt={company.name}
+                className="hidden md:block h-42 mb-4"
+              />
+              <p className="text-white/60 text-sm leading-relaxed text-center md:text-left">
                 Profesionalne adaptacije stanova i poslovnih prostora u Beogradu.
                 Suva gradnja, gipsarski radovi, elektroinstalacije i kompletne adaptacije ključ u ruke.
               </p>
             </div>
 
             {/* Quick Links */}
-            <div>
-              <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+            <div className="text-center md:text-left">
+              {/* <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
                 Navigacija
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 flex flex-col items-center md:items-start">
                 <li>
                   <Link to="/#usluge" className="text-white/60 hover:text-white text-sm transition-colors">
                     Usluge
@@ -63,19 +72,30 @@ export default function Footer() {
                     Kontakt
                   </Link>
                 </li>
-              </ul>
+              </ul> */}
             </div>
 
             {/* Contact Info */}
-            <div>
-              <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
-                Kontakt
+            <div className="text-center md:text-left">
+              <h3 className="text-white font-semibold text-2xl uppercase tracking-wider mb-4">
+                {company.name}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 flex flex-col items-center md:items-start">
+                <li>
+                  <p className="text-white/40 text-center md:text-right">
+                    PIB: {company.pib} | MB: {company.mb}
+                  </p>
+                </li>
+                <li>
+                  <p className="flex items-center gap-2 text-white/40 text-sm">
+                    <MapIcon size={16} />
+                    {company.address}
+                  </p>
+                </li>
                 <li>
                   <a
                     href={company.phoneHref}
-                    className="flex items-center gap-2 text-white/60 hover:text-white text-sm transition-colors"
+                    className="flex items-center gap-2 text-white/60 hover:text-white text-xl transition-colors"
                   >
                     <Phone size={16} />
                     {company.phoneFormatted}
@@ -90,7 +110,7 @@ export default function Footer() {
                     {company.email}
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href={company.instagram}
                     target="_blank"
@@ -100,38 +120,34 @@ export default function Footer() {
                     <Camera size={16} />
                     Instagram
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
 
           {/* Bottom Bar */}
           <div className="border-t border-white/10 mt-10 pt-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center text-xs">
-              <p className="text-white/40 text-center md:text-left">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-center text-xs">
+              <p className="text-white/50 text-center md:text-left">
                 &copy; {new Date().getFullYear()} {company.name}. Sva prava zadržana.
               </p>
-              <div className="text-center">
-                <motion.a
+              <div className="text-right">
+                <p className='text-white/40'>Created by <span>
+                <a 
                   href="https://ajsasoft.rs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-sm font-semibold bg-gradient-to-r from-white via-secondary to-accent bg-clip-text text-transparent hover:scale-105 transition-transform"
-                  animate={{
-                    opacity: [0.8, 1, 0.8],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
+                  className="inline-block rounded-sm bg-white/10 p-1.5 text-white/40 hover:text-orange-400/80 hover:bg-amber-50/0 transition-colors duration-1000 ease-in-out"
+                  
                 >
-                  Dizajn i izrada AjsaSoft
-                </motion.a>
+                  AjsaSoft
+                </a>
+                </span>
+                </p>
               </div>
-              <p className="text-white/40 text-center md:text-right">
+              {/* <p className="text-white/40 text-center md:text-right">
                 PIB: {company.pib} | MB: {company.mb}
-              </p>
+              </p> */}
             </div>
           </div>
         </div>

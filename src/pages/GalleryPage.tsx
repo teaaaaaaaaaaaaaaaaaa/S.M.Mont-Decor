@@ -51,7 +51,7 @@ export default function GalleryPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category Filter */}
           <AnimatedSection>
-            <div className="flex flex-wrap justify-center gap-2 mb-10 sticky top-20 z-20 bg-white/90 backdrop-blur-sm py-4 -mx-4 px-4 rounded-xl">
+            <div className="flex flex-wrap justify-center gap-2 mb-10 sticky top-24 z-10 bg-white/90 backdrop-blur-sm py-4 -mx-4 px-4 rounded-xl">
               {categories.map((cat) => (
                 <button
                   key={cat}
@@ -80,16 +80,16 @@ export default function GalleryPage() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3, delay: index * 0.03 }}
                   className="break-inside-avoid mb-3 md:mb-4 group cursor-pointer"
+                  onClick={() => setLightboxIndex(index)}
                 >
                   <div className="relative overflow-hidden rounded-xl">
                     <LazyImage
                       src={item.src}
                       alt={item.alt}
                       className="w-full"
-                      onClick={() => setLightboxIndex(index)}
                     />
-                    <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/20 transition-colors duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/20 transition-colors duration-300 pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                       <p className="text-white text-xs">{item.alt}</p>
                       <p className="text-white/70 text-xs mt-1">
                         {categoryLabels[item.category]}

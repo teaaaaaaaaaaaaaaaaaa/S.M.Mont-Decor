@@ -74,7 +74,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 px-2"
         >
           <span className="block text-white">Vaš prostor,</span>
           <span className="block bg-gradient-to-r from-white via-secondary to-accent bg-clip-text text-transparent">
@@ -87,7 +87,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="text-xl sm:text-2xl md:text-3xl text-white/80 mb-4 font-light tracking-wide"
+          className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/80 mb-4 font-light tracking-wide"
         >
           Ključ u ruke.
         </motion.p>
@@ -96,7 +96,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-base sm:text-lg text-white/60 mb-10 max-w-2xl mx-auto"
+          className="text-sm sm:text-base md:text-lg text-white/60 mb-8 sm:mb-10 max-w-2xl mx-auto px-4"
         >
           Od demontaže do završne obrade – kompletne adaptacije i renoviranja u Beogradu.
           Suva gradnja, gipsarski radovi, elektroinstalacije i sve što vašem prostoru treba.
@@ -126,7 +126,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="flex flex-wrap items-center justify-center gap-6 mt-12 text-white/60 text-sm"
+          className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-12 text-white/60 text-xs sm:text-sm"
         >
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />

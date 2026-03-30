@@ -1,4 +1,4 @@
-import { Phone, Mail, Camera, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail,  MapPin, Clock } from 'lucide-react';
 import AnimatedSection from '../components/ui/AnimatedSection';
 import Button from '../components/ui/Button';
 import { company } from '../data/company';
@@ -59,7 +59,7 @@ export default function ContactPage() {
                   </div>
                 </a>
 
-                <a
+                {/* <a
                   href={company.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -72,7 +72,7 @@ export default function ContactPage() {
                     <p className="text-sm text-primary/50">Instagram</p>
                     <p className="text-lg font-semibold">@smmontdecor</p>
                   </div>
-                </a>
+                </a> */}
 
                 <div className="flex items-center gap-4 text-primary">
                   <div className="w-12 h-12 rounded-xl bg-secondary/50 flex items-center justify-center">
